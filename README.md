@@ -5,7 +5,7 @@
 * Python, linguagem de programação, está sendo utilizada para extração de dados, usando técnicas de web mining, url para download: https://www.python.org/downloads/;
 
 ## Dados
-* Dados de Commodities como: Methanol, Benzene, Ethylene oxide, Propylene oxide e Xylene, por enquanto foram retirados do http://sunsirs.com/ um site chines qe possue essas informa��es desse indice. 
+* Dados de Commodities como: Methanol, Benzene, Ethylene oxide, Propylene oxide e Xylene, por enquanto foram retirados do http://sunsirs.com/ um site chines qe possue essas informações desse indice. 
 
 ## Utilizando os dados:
 1. Instale o python e o Jupyter;
