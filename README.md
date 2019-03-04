@@ -14,4 +14,5 @@
 3. Rodar os scripts python da pasta dados utilizando o jupyter;
 4. Será salvo na pasta dados um arquivo excel com os dados ja tratados;
 5. Para os commodities, devido ao site não possuir um histórico extenso, é necessário executar o código a cada 6 dias, por um batch ou manualmente.
+No caso é necessario rodar o main, com o outro arquivo crawler na mesma pasta.
 6. Para a moeda, será necessário rodar apenas uma vez pois o site traz um histórico de 1 ano.
