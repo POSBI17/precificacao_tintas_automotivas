@@ -82,17 +82,25 @@ def crawler_commodity(commodity):
     # Filtra o conteudo
     bsObj = BeautifulSoup(html, "html.parser")
     tabela = bsObj('table')[0]
-    dados = [elemento.text for elemento in tabela('td')[4:] if elemento.text != supported_commodities[commodity]['type']]
     
+    materiais = []
+    precos = []
+    datas = []
+    for elemento in tabela('tr')[1:]:
+        colunas = elemento('td')
+        
+        materiais.append(colunas[0].text)
+        precos.append(colunas[2].text)
+        datas.append(colunas[3].text)
+        
     # salva em um data frame
-    df = pd.DataFrame(dados)
     d = {
-        'Material': [dados[0], dados[3], dados[6], dados[9], dados[12], dados[15]],
-        'Preço': [dados[1], dados[4], dados[7], dados[10], dados[13], dados[16]], 
-        'Data': [dados[2], dados[5],dados[8], dados[11], dados[14], dados[17]]     
+        'Material': materiais,
+        'Preço': precos, 
+        'Data': datas     
     }
     df = pd.DataFrame(d, index=['1', '2', '3', '4', '5', '6'])
-    
+
     #exportar para o excel
     data_txt = date.today().strftime('%d_%m_%Y')
     nome_arquivo = 'dados/' + commodity + '_' + data_txt + '.xlsx'
